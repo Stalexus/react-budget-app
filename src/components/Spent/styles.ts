@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { StyledBadge } from '../Badget/styles';
 
-export const StyledRemaining = styled(StyledBadge)`
+export const StyledSpent = styled(StyledBadge)`
     justify-content: flex-start;
-    background-color: #CCD5FF;
-`;
+    background-color: #E7BBE3;
+`

@@ -1,4 +1,5 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react";
+import { createTextChangeRange } from "typescript";
 import { v4 as uuidv4 } from 'uuid';
 
 interface IExpense {
@@ -10,34 +11,30 @@ interface IExpense {
 interface IExpenseContext {
     expenses: IExpense[];
     setExpenses: (expenses: IExpense) => void;
-    deleteExpenses: () => void;
+    deleteExpenses: (id: string) => void;
 }
 
 const ExpensesContext = createContext<IExpenseContext>({
     expenses: [],
     setExpenses: (value: IExpense) => {},
-    deleteExpenses: () => {}
+    deleteExpenses: (id: string) => {}
 })
 
 const useExpensesValue = () => {
     const [expensesContext, setExpensesContext] = useState<IExpenseContext>(
         () => {
             return {
-                expenses: [{
-                    id: uuidv4(),
-                    body: 'null',
-                    cost: 100,
-                }],
+                expenses: [],
                 setExpenses: (value: IExpense) => {
                     setExpensesContext(ctx => ({
                         ...ctx,
                         expenses: [...ctx.expenses, value],
                     }));
                 },
-                deleteExpenses: () => {
+                deleteExpenses: (id: string) => {
                     setExpensesContext(ctx => ({
                         ...ctx,
-                        expenses: [],
+                        expenses: ctx.expenses.filter((expence) => expence.id !== id),
                     }))
                 }
             };

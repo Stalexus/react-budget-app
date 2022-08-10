@@ -1,2 +1,2 @@
-import { CardRemaining } from './Remaining';
-export { CardRemaining }
+import { Remaining } from './Remaining';
+export { Remaining }

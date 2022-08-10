@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Amount, BudgetButton, StyledBadge } from "./styles";
+import { Amount, BudgetButton, BudgetInput, StyledBadge } from "./styles";
 
 export const Badget = () => {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
@@ -16,9 +16,9 @@ export const Badget = () => {
     <div>
       {isEditMode ? (
         <StyledBadge>
-          <input />
+          <BudgetInput placeholder="Enter budget ..." />
           <BudgetButton onClick={handleSave}>Save</BudgetButton>
-          
+
         </StyledBadge>
       ) : (
         <StyledBadge>

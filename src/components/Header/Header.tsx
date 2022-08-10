@@ -1,6 +1,7 @@
 import { Badget } from '../Badget'
-import { CardRemaining } from '../Remaining'
+import { Remaining } from '../Remaining'
 import { CustomSelect } from '../Select'
+import { Spent } from '../Spent'
 import { Title } from '../Title'
 import { StyledHeader, WraperTitle } from './styles'
 
@@ -12,7 +13,8 @@ export const Header = () => {
             <CustomSelect></CustomSelect>
             </WraperTitle>
             <Badget></Badget>
-            <CardRemaining></CardRemaining>
+            <Remaining></Remaining>
+            <Spent></Spent>
         </StyledHeader>
     )
 }

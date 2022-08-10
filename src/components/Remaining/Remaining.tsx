@@ -1,10 +1,10 @@
 import { Amount } from '../Badget/styles'
-import { StyledCardRemaining } from './styles'
+import { StyledRemaining } from './styles'
 
-export const CardRemaining = () => {
+export const Remaining = () => {
   return (
-    <StyledCardRemaining>
+    <StyledRemaining>
         <Amount>Remaining: $2000</Amount>
-    </StyledCardRemaining>
+    </StyledRemaining>
   )
 }
