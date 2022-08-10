@@ -8,5 +8,5 @@ export const StyledHeader = styled.header`
 
 export const WraperTitle = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 `;

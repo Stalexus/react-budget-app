@@ -3,7 +3,7 @@ import { useExpenseContext } from "../../context";
 import { v4 as uuidv4 } from 'uuid';
 
 export const ExpensesList = () => {
-    const { expenses, setExpenses, deleteExpenses } = useExpenseContext();
+    const { expenses, setExpenses, deleteExpense } = useExpenseContext();
     const [newExpense, setNewExpense] = useState('');
 
     const handleNewExpense = (event: ChangeEvent<HTMLInputElement>) => {
