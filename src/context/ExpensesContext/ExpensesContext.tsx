@@ -1,6 +1,4 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react";
-import { createTextChangeRange } from "typescript";
-import { v4 as uuidv4 } from 'uuid';
 
 export interface IExpense {
     id: string;
@@ -10,44 +8,49 @@ export interface IExpense {
 
 interface IExpenseContext {
     expenses: IExpense[];
-    setExpenses: (expenses: IExpense) => void;
-    deleteExpense: (id: string) => void;
+    addNewExpense: (value: IExpense) => void;
+    removeExpense: (id: string) => void;
 }
 
 const ExpensesContext = createContext<IExpenseContext>({
     expenses: [],
-    setExpenses: (value: IExpense) => { },
-    deleteExpense: (id: string) => { }
-})
+    addNewExpense: (value: IExpense) => { },
+    removeExpense: (id: string) => { },
+});
 
-const useExpensesValue = () => {
+const useExpenseValue = () => {
     const [expensesContext, setExpensesContext] = useState<IExpenseContext>(
         () => {
             return {
                 expenses: [],
-                setExpenses: (value: IExpense) => {
-                    setExpensesContext(ctx => ({
-                        ...ctx,
-                        expenses: [...ctx.expenses, value],
+                addNewExpense: (expense) => {
+                    setExpensesContext((previousContext) => ({
+                        ...previousContext,
+                        expenses: [...previousContext.expenses, { ...expense }],
                     }));
                 },
-                deleteExpense: (id: string) => {
-                    setExpensesContext(ctx => ({
-                        ...ctx,
-                        expenses: ctx.expenses.filter((expence) => expence.id !== id),
-                    }))
-                }
+
+                removeExpense: (id) => {
+                    setExpensesContext((previousContext) => ({
+                        ...previousContext,
+                        expenses: [...previousContext.expenses].filter(
+                            (expense) => expense.id !== id
+                        ),
+                    }));
+                },
             };
         }
     );
+
     return expensesContext;
 };
+
 
 export const useExpenseContext = () => useContext<IExpenseContext>(ExpensesContext)
 
 export const ExpensesProvider: FC<{ children: ReactNode }> = ({ children }) => {
     return (
-        <ExpensesContext.Provider value={useExpensesValue()}>
+        <ExpensesContext.Provider value={useExpenseValue()}>
             {children}
         </ExpensesContext.Provider>
     );

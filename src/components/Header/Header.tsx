@@ -1,4 +1,4 @@
-import { Badget } from '../Badget'
+import { Budget } from '../Budget'
 import { Remaining } from '../Remaining'
 import { CustomSelect } from '../Select'
 import { Spent } from '../Spent'
@@ -12,7 +12,7 @@ export const Header = () => {
             <Title text="Budget App"></Title>
             <CustomSelect></CustomSelect>
             </WraperTitle>
-            <Badget></Badget>
+            <Budget></Budget>
             <Remaining></Remaining>
             <Spent></Spent>
         </StyledHeader>

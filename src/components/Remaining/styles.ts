@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { StyledBadge } from '../Badget/styles';
+import { StyledBadge } from "../Budget/styles";
 
 interface IProps {
-    isOverspend: boolean;
+  isOverspend: boolean;
+  areaName?: string;
 }
 
 export const StyledRemaining = styled(StyledBadge)<IProps>`

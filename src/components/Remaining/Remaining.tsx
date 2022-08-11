@@ -1,16 +1,22 @@
-import { useCurrencyContext } from '../../context';
-import { useRemaining } from '../../hooks/useRemaning';
-import { Amount } from '../Badget/styles'
-import { StyledRemaining } from './styles'
+import { useCurrencyContext } from "../../context/CurrencyContext";
+import { useRemaining } from "../../hooks/useRemaning";
+import { Amount } from "../Budget/styles";
+import { StyledRemaining } from "./styles";
 
-export const Remaining = () => {
-  const { currency } = useCurrencyContext();
-  const remaining = useRemaining();
-  return (
-    <StyledRemaining isOverspend={remaining < 0}>
-        <Amount> {remaining < 0
-          ? `Overspending: ${currency + remaining * -1}`
-          : `Remaining: ${currency + remaining}`}</Amount>
-    </StyledRemaining>
-  )
+interface IProps {
+  areaName?: string;
 }
+
+export const Remaining = ({ areaName }: IProps) => {
+  const remaining = useRemaining();
+  const { currency } = useCurrencyContext();
+  return (
+    <StyledRemaining isOverspend={remaining < 0} areaName={areaName}>
+      <Amount>
+        {remaining < 0
+          ? `Overspending: ${currency.value + remaining * -1}`
+          : `Remaining: ${currency.value + remaining}`}
+      </Amount>
+    </StyledRemaining>
+  );
+};

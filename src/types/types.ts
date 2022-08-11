@@ -1,4 +1,11 @@
+import { Currency } from "../config/currency";
+
 export interface ICurrencyOption {
-    readonly value: string;
-    readonly label: string;
+    value: Currency, label: keyof typeof Currency
+}
+
+export interface IExpense {
+    id: string,
+    name: string,
+    cost: number,
 }

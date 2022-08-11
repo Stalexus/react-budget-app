@@ -1,28 +1,30 @@
-import { ChangeEvent, useState } from "react";
-import { useExpenseContext } from "../../context";
-import { v4 as uuidv4 } from 'uuid';
+import { IExpense } from "../../context/ExpensesContext";
+import { ExpensesListItem } from "../EpxensesListItem";
+import { StyledExpensesList, StyledExpensesListPlaceholder } from "./styles";
 
-export const ExpensesList = () => {
-    const { expenses, setExpenses, deleteExpense } = useExpenseContext();
-    const [newExpense, setNewExpense] = useState('');
-
-    const handleNewExpense = (event: ChangeEvent<HTMLInputElement>) => {
-        setNewExpense(event.target.value);
-        setExpenses({
-            id: uuidv4(),
-            body: event.target.value,
-            cost: 100,
-        })
-    };
-
-    return (
-        <>
-            <input type="text" value={newExpense} onChange={handleNewExpense} />
-            <ul>
-                {expenses.map((expense) => {
-                    return <li key={expense.id}>{expense.body}</li>
-                })}
-            </ul>
-        </>
-    )
+interface IProps {
+  visibleExpenses: IExpense[];
+  deleteExpense: (id: string) => void;
 }
+
+export const ExpensesList = ({ visibleExpenses, deleteExpense }: IProps) => {
+  if (visibleExpenses.length !== 0) {
+    return (
+      <StyledExpensesList>
+        {visibleExpenses.map((expense) => {
+          return (
+            <ExpensesListItem
+              key={expense.id}
+              expense={expense}
+              deleteExpense={deleteExpense}
+            />
+          );
+        })}
+      </StyledExpensesList>
+    );
+  }
+
+  return (
+    <StyledExpensesListPlaceholder>Oooops 🙈</StyledExpensesListPlaceholder>
+  );
+};

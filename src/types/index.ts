@@ -1,2 +1,2 @@
-import { ICurrencyOption } from './types'
-export type { ICurrencyOption }
+import { ICurrencyOption, IExpense } from './types'
+export type { ICurrencyOption, IExpense }

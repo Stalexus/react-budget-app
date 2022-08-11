@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledBadge } from '../Badget/styles';
+import { StyledBadge } from '../Budget/styles';
 
 export const StyledSpent = styled(StyledBadge)`
     justify-content: flex-start;
