@@ -3,7 +3,6 @@ import { IExpense, useExpenseContext } from "../../context/ExpensesContext";
 import { Amount } from "../Budget/styles";
 import { StyledSpent } from "./styles";
 
-
 export const Spent = () => {
   const { currency } = useCurrencyContext();
   const { expenses } = useExpenseContext();

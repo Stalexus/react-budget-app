@@ -9,8 +9,8 @@ export const Header = () => {
     return (
         <StyledHeader>
             <WraperTitle>
-            <Title text="Budget App"></Title>
-            <CustomSelect></CustomSelect>
+                <Title text="Budget App"></Title>
+                <CustomSelect></CustomSelect>
             </WraperTitle>
             <Budget></Budget>
             <Remaining></Remaining>

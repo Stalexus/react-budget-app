@@ -5,7 +5,6 @@ import { useCurrencyContext } from "../../context/CurrencyContext";
 import { ICurrencyOption } from '../../types';
 import { StyledSelect } from './styles'
 
-
 export const CustomSelect = () => {
     const currencyOptions: ICurrencyOption[] = [
         { value: Currency.USD, label: "USD" },

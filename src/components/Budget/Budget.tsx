@@ -5,11 +5,7 @@ import { useInput } from "../../hooks/useInput";
 import { useToggle } from "../../hooks/useToggle";
 import { Amount, BudgetInput, BudgetButton, StyledBadge } from "./styles";
 
-interface IProps {
-  areaName?: string;
-}
-
-export const Budget = ({ areaName }: IProps) => {
+export const Budget = () => {
   const { currency } = useCurrencyContext();
   const { budget, editBudgetValue } = useBudgetContext();
   const [isEditMode, toggleIsEditMode] = useToggle(false);

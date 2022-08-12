@@ -2,8 +2,6 @@ import { createContext, FC, ReactNode, useContext, useState } from "react";
 import { ICurrencyOption } from "../../types";
 import { Currency } from "../../config/currency";
 
-
-
 interface ICurrencyContext {
     currency: ICurrencyOption;
     setCurrency: (value: ICurrencyOption) => void;
