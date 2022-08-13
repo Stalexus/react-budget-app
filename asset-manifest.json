@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.851e8420.js",
-    "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.c08ebf141cd3c5f2a792c255b41b9eb0.svg",
-    "main.851e8420.js.map": "/static/js/main.851e8420.js.map"
+    "main.js": "/react-budget-app/static/js/main.d9ad796f.js",
+    "index.html": "/react-budget-app/index.html",
+    "static/media/close.svg": "/react-budget-app/static/media/close.c08ebf141cd3c5f2a792c255b41b9eb0.svg",
+    "main.d9ad796f.js.map": "/react-budget-app/static/js/main.d9ad796f.js.map"
   },
   "entrypoints": [
-    "static/js/main.851e8420.js"
+    "static/js/main.d9ad796f.js"
   ]
 }
