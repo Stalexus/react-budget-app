@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { StyledSearch } from "../Search/styles";
 
 export const ExpenseForm = styled.form`
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
