@@ -14,12 +14,20 @@ export const AddExpenseInput = styled(StyledSearch)`
 `;
 
 export const AddExpenseButton = styled.button`
-  padding: 15px 0;
+  padding: 15px 10px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #23c9ff;
   color: #ffffff;
   border: none;
   border-radius: 10px;
+  @media (min-width: 576px) {
+    width: 600px;
+  }
+  @media (min-width: 768px) {
+    width: 800px;
+  }
 `;
 
 export const AddExpenseError = styled.p`
