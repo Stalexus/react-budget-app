@@ -20,7 +20,7 @@ export const StyledBadge = styled.div`
       }
 `;
 export const Amount = styled.p`
-    margin-left: 20px;
+    padding: 20px;
     font-size: 20px;
 `;
 
@@ -32,7 +32,6 @@ export const BudgetButton = styled.button`
 `;
 
 export const BudgetInput = styled.input`
-    margin-left: 20px;
     outline: none;
     border: none;
     background-color: transparent;
