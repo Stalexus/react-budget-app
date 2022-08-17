@@ -22,6 +22,9 @@ export const AddExpenseButton = styled.button`
   color: #ffffff;
   border: none;
   border-radius: 10px;
+  @media (min-width: 320px) {
+    width: 335px;
+  }
   @media (min-width: 576px) {
     width: 600px;
   }
