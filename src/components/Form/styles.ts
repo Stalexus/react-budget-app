@@ -8,6 +8,15 @@ export const ExpenseForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (min-width: 320px) {
+    width: 335px;
+  }
+  @media (min-width: 576px) {
+    width: 600px;
+  }
+  @media (min-width: 768px) {
+    width: 800px;
+  }
 `;
 
 export const AddExpenseInput = styled(StyledSearch)`
@@ -23,13 +32,13 @@ export const AddExpenseButton = styled.button`
   border: none;
   border-radius: 10px;
   @media (min-width: 320px) {
-    width: 335px;
+    width: 340px;
   }
   @media (min-width: 576px) {
-    width: 600px;
+    width: 605px;
   }
   @media (min-width: 768px) {
-    width: 800px;
+    width: 805px;
   }
 `;
 
